@@ -1,0 +1,14 @@
+name: 'Copy Release'
+description: 'Copy a release to another repository including assets'
+inputs:
+  destination_repo:
+    required: true
+    description: 'The destination org/repo for the release'
+  github_token: 
+    required: false
+  tag:
+    description: 'The release tag to copy (will use the tag that triggered the action otherwise)'
+    required: false
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
