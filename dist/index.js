@@ -11534,13 +11534,14 @@ const getOrCreateRelease = async (octo, { tag, repoOrgName, releaseData }) => {
 
 async function run() {
   try {
+    const sourceRepo = core.getInput("source_repo", { required: true });
     const destRepo = core.getInput("destination_repo", { required: true });
     const ref = core.getInput("tag") || process.env.GITHUB_REF;
     const gitHubKey =
       process.env.GITHUB_TOKEN ||
       core.getInput("github_token", { required: true });
-    const [owner, repo] = "airsdk/airsdkmanager".split("/"); // process.env.GITHUB_REPOSITORY.split("/");
-
+    const [owner, repo] = sourceRepo.split("/"); 
+    
     const payload = JSON.stringify(github.context.payload, undefined, 2);
 
     console.log(process.env.GITHUB_REF);

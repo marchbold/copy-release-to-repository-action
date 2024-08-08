@@ -1,10 +1,17 @@
 name: 'Copy Release'
 description: 'Copy a release to another repository including assets'
+branding:
+  icon: 'copy'
+  color: 'blue'
 inputs:
+  source_repo:
+    required: true
+    description: 'The source org/repo for the release'
   destination_repo:
     required: true
     description: 'The destination org/repo for the release'
   github_token: 
+    description: 'Should be a token that has access to both the source and destination repositories'
     required: false
   tag:
     description: 'The release tag to copy (will use the tag that triggered the action otherwise)'

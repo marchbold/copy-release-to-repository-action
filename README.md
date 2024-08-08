@@ -9,6 +9,11 @@ This process is useful when you have a separate repository that distributes rele
 
 ## Inputs 
 
+### `source_repo`
+
+**Required** The source `org/repo` for the release.
+
+
 ### `destination_repo`
 
 **Required** The destination `org/repo` for the release.
